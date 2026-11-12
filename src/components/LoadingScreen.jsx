@@ -37,7 +37,7 @@ export default function LoadingScreen({ onFinish }) {
           }, 1000);
         }, 800);
       }
-    }, 30);
+    }, 10);
 
     // Cleanup timers on unmount
     return () => {

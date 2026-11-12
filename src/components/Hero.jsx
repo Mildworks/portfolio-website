@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-black pt-20 overflow-hidden font-mono"
+      className="relative min-h-screen flex flex-col md:items-center md:justify-center bg-black pt-10 md:pt-20 overflow-hidden font-mono"
     >
       {/* CRT scanline effect */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.02)_50%)] bg-[length:100%_4px]" />
