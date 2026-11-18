@@ -1,6 +1,6 @@
 import imgMahalu from "../assets/MahaluSpaSS.png";
-import imgTodo from "../assets/To-Do List AppSS.png";
-import imgTundra from "../assets/tundra-marketplaceSS.png"; // Sesuaikan nama variabel import
+import imgExpense from "../assets/Expense Tracker2.png";
+import imgTundra from "../assets/tundra-marketplaceSS.png";
 
 const projects = [
   {
@@ -15,13 +15,13 @@ const projects = [
   },
   {
     index: "02",
-    title: "todo-list-app.exe",
-    desc: "A to-do list app. You can add and delete tasks. Tasks are saved in local storage.",
-    stack: ["HTML", "CSS", "JavaScript"],
+    title: "expense-tracker.exe",
+    desc: "A personal finance tracker built with the PERN stack app to track income, expenses, and budgets.",
+    stack: ["PostgreSQL", "Express", "React", "Node.js", "Tailwind"],
     year: "2026",
     status: "LIVE",
-    link: "https://to-do-list-app-lac-nine.vercel.app/",
-    image: imgTodo,
+    link: "https://expense-tracker-psi-gold-21.vercel.app/login",
+    image: imgExpense,
   },
   {
     index: "03",
@@ -44,6 +44,7 @@ export default function Showcase() {
       {/* CRT scanlines */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.02)_50%)] bg-[length:100%_4px]" />
 
+      {/* max-w-5xl agar sejajar dengan Header dan About */}
       <div className="relative max-w-5xl mx-auto px-6">
         
         {/* Header */}
@@ -61,7 +62,7 @@ export default function Showcase() {
         </div>
 
         {/* Project Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((p) => (
             <a
               key={p.index}
@@ -70,13 +71,13 @@ export default function Showcase() {
               rel="noopener noreferrer"
               className="group flex flex-col bg-black border border-gray-800 rounded-lg overflow-hidden hover:border-gray-500 hover:bg-gray-900/50 transition-all duration-300"
             >
-              {/* Thumbnail */}
-              <div className="relative aspect-[16/9] w-full bg-gray-900 border-b border-gray-800 flex items-center justify-center overflow-hidden">
+              {/* Thumbnail: Rasio 16/10 agar gambar tetap terlihat besar walau container lebih kecil */}
+              <div className="relative aspect-[16/10] w-full bg-gray-900 border-b border-gray-800 flex items-center justify-center overflow-hidden shrink-0">
                 {p.image ? (
                   <img 
                     src={p.image} 
                     alt={p.title} 
-                    className="object-cover w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+                    className="object-cover object-top w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
                   />
                 ) : (
                   <span className="text-xs text-gray-600">[ image_preview.jpg ]</span>
@@ -110,16 +111,16 @@ export default function Showcase() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-1">
+                <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-1 line-clamp-3">
                   {p.desc}
                 </p>
 
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                {/* Tech stack: 3 Kolom */}
+                <div className="grid grid-cols-3 gap-2 mb-6 min-h-[64px] content-start">
                   {p.stack.map((s) => (
                     <span
                       key={s}
-                      className="px-2 py-1 text-[10px] font-medium text-gray-400 bg-gray-900 rounded border border-gray-800"
+                      className="px-1.5 py-1 text-[10px] font-medium text-gray-400 bg-gray-900 rounded border border-gray-800 text-center truncate flex items-center justify-center"
                     >
                       {s}
                     </span>
